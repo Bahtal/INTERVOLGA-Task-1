@@ -34,13 +34,31 @@ html, body {
 } 
 
 .red {
-	background-color: red;
 	width: 250px;
+}
+
+#text-area__red {
+	background-color: red;
 }
 
 .green { 
 	width: 250px;
+}
+
+#text-area__green {
 	background-color: green;
+}
+textarea::-webkit-scrollbar {
+	display: none;
+}
+
+#text-area__red, #text-area__green {
+	vertical-align: top;
+	min-height: 70px;
+	width: 250px;
+	resize: vertical;
+	overflow: hidden;
+	display: block;
 }
 
 .section {
@@ -68,4 +86,15 @@ html, body {
 	background-color: rgb(179, 179, 179);
 }
 
+@media (max-width: 768px) {
+	.main__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 
+	#text-area__red, #text-area__green {
+		min-width: 100vh;
+	}
+
+}
